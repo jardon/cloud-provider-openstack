@@ -98,6 +98,8 @@ spec:
               value: /etc/config/cloud.conf
             - name: CLUSTER_NAME
               value: {{ .Values.cluster.name }}
+            - name: OS_CCM_REGIONAL
+              value: true
       {{- if .Values.extraInitContainers }}
       initContainers: {{ toYaml .Values.extraInitContainers | nindent 6 }}
       {{- end }}
